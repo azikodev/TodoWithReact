@@ -11,18 +11,7 @@ import {
 
 function App() {
   const Notify = () => {
-    toast("Inputlarni to'liq to'ldiring boyaka!"),
-      {
-        position: "top-right",
-        autoClose: false,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-        transition: Bounce,
-      };
+    toast("Inputlarni to'liq to'ldiring boyaka!");
   };
 
   const dispatch = useDispatch();
@@ -62,17 +51,26 @@ function App() {
       <form onSubmit={handleSubmit}>
         <label>
           <span>Goal Name:</span>
-          <input type="text" ref={inputRef} />
+          <input
+            type="text"
+            ref={inputRef}
+            placeholder="Enter your goal's name"
+          />
         </label>
         <label>
           <span>Definition:</span>
-          <input type="text" ref={definitionRef} />
+          <textarea ref={definitionRef}
+            placeholder="Enter your goal's definition" rows={4} cols={20}></textarea>
         </label>
         <label>
           <span>Date:</span>
-          <input type="date" ref={dateRef} />
+          <input
+            type="date"
+            ref={dateRef}
+            placeholder="Select your goal's date"
+          />
         </label>
-        <button className="button">Submit</button>
+        <button className="buttons">Submit</button>
       </form>
       <ul className="cards">
         {todos.map((item) => (
@@ -96,14 +94,14 @@ function App() {
             <div className="btnsContainer">
               <button
                 onClick={() => dispatch(removeTodo(item.id))}
-                className=" button focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
+                className=" buttons focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
                 type="button"
               >
                 Delete
               </button>
               <button
                 onClick={() => dispatch(changeStateTodo(item.id))}
-                className="button"
+                className="buttons"
               >
                 Done
               </button>

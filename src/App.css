@@ -27,8 +27,8 @@ form {
 .cardTodo {
   border: 1px solid black;
   border-radius: 5px;
-  max-width: 100%;
-  /* width: 200px; */
+  /* max-width: 100%; */
+  width: 250px;
   padding: 15px 20px;
   span {
     display: flex;
@@ -50,7 +50,7 @@ form {
   display: flex;
   justify-content: space-between;
 }
-button {
+.buttons {
   width: 100%;
   max-width: 150px;
   background: #3314bb;
@@ -58,4 +58,7 @@ button {
   padding: 8px 16px;
   border-radius: 5px;
   /* font-size: 110%; */
+}
+textarea {
+  resize: none;
 }
